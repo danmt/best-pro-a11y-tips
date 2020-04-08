@@ -27,14 +27,8 @@
     </label>
     <label class="form-control">
       <span class="label">Email <span style="color: red">*</span></span>
-      <input
-        id="email-input"
-        type="email"
-        formControlName="email"
-        aria-describedby="email-input-required email-input-format"
-        required
-      />
-      <div *ngIf="ngForm.submitted && emailControl?.errors" class="error">
+      <input id="email-input" type="email" formControlName="email" aria-describedby="email-input-suggestion" required />
+      <div id="email-input-suggestion" *ngIf="ngForm.submitted && emailControl?.errors" class="error">
         Please provide an email with a format like "your-email@mail.com"
       </div>
     </label>

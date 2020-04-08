@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.form-control {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.submitted input.ng-invalid {
+  outline: auto red;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 0.2rem;
+}
+
+.legend {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.label {
+  display: inline-block;
+}
+
+.form-group {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: 0 0.5rem;
+  }
+}

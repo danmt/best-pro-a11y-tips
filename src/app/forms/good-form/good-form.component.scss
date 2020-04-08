@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.form-control {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.form-group {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: 0 0.5rem;
+  }
+}
+
+.submitted input.ng-invalid {
+  outline: auto red;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 0.2rem;
+}

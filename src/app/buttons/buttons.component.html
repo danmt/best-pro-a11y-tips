@@ -1,0 +1,11 @@
+<div>
+  <app-bad-button (pressed)="clicked()">Click me</app-bad-button>
+  <app-bad-button (pressed)="clicked()" type="secondary">Click me</app-bad-button>
+  <app-bad-button (pressed)="clicked()" [disabled]="true">Click me</app-bad-button>
+</div>
+
+<div>
+  <button app-good-button (clicked)="clicked()">Click me</button>
+  <button app-good-button (clicked)="clicked()" type="secondary">Click me</button>
+  <button app-good-button (clicked)="clicked()" disabled>Click me</button>
+</div>

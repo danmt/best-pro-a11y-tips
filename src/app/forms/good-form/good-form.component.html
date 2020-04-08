@@ -1,0 +1,54 @@
+<form #ngForm="ngForm" [ngClass]="{ submitted: ngForm.submitted }" (ngSubmit)="submit()" [formGroup]="form">
+  <div #errorSummary tabindex="-1">
+    <ng-container *ngIf="validationErrors?.length">
+      Errors were found the last time the form was submitted:
+
+      <ul>
+        <li *ngFor="let error of validationErrors">
+          <a [href]="error.link">{{ error.message }}</a>
+        </li>
+      </ul>
+    </ng-container>
+  </div>
+
+  The asterisc (<span style="color: red">*</span>) means the input is mandatory.
+
+  <fieldset class="form-group" formGroupName="personal">
+    <legend>
+      Personal information
+    </legend>
+    <label class="form-control">
+      <span class="label">First Name</span>
+      <input formControlName="firstName" />
+    </label>
+    <label class="form-control">
+      <span class="label">Last Name</span>
+      <input formControlName="lastName" />
+    </label>
+    <label class="form-control">
+      <span class="label">Email <span style="color: red">*</span></span>
+      <input
+        id="email-input"
+        type="email"
+        formControlName="email"
+        aria-describedby="email-input-required email-input-format"
+        required
+      />
+      <div *ngIf="ngForm.submitted && emailControl?.errors" class="error">
+        Please provide an email with a format like "your-email@mail.com"
+      </div>
+    </label>
+    <fieldset>
+      <legend>Age</legend>
+      <label> <input name="age" type="radio" value="6-17" formControlName="age" /> 6-17 </label>
+      <label> <input name="age" type="radio" value="18-30" formControlName="age" /> 18-30 </label>
+      <label> <input name="age" type="radio" value="30-50" formControlName="age" /> 30-50 </label>
+      <label> <input name="age" type="radio" value="50+" formControlName="age" /> 50+ </label>
+    </fieldset>
+  </fieldset>
+
+  <div class="form-actions">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>

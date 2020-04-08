@@ -1,0 +1,41 @@
+<div class="form" [formGroup]="form" [ngClass]="{ submitted: submitted }">
+  <div class="form-group" formGroupName="personal">
+    <div class="legend">
+      Personal information
+    </div>
+    <div class="form-control">
+      <span class="label">First Name</span>
+      <input formControlName="firstName" />
+    </div>
+    <div class="form-control">
+      <span class="label">Last Name</span>
+      <input formControlName="lastName" />
+    </div>
+    <div class="form-control">
+      <span class="label">Email <span style="color: red">*</span></span>
+      <div>
+        <input formControlName="email" />
+        <div *ngIf="submitted && emailControl?.errors?.required" class="error">Email is required</div>
+        <div *ngIf="submitted && emailControl?.errors?.email" class="error">Email is invalid</div>
+      </div>
+    </div>
+    <div class="form-control">
+      <span class="label">Age</span>
+      <div>
+        <input name="age" type="radio" value="6-17" formControlName="age" />
+        <span>6-17</span>
+        <input name="age" type="radio" value="18-30" formControlName="age" />
+        <span>18-30</span>
+        <input name="age" type="radio" value="30-50" formControlName="age" />
+        <span>30-50</span>
+        <input name="age" type="radio" value="50+" formControlName="age" />
+        <span>50+</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button (click)="submit()">Submit</button>
+    <button (click)="reset()">Reset</button>
+  </div>
+</div>
